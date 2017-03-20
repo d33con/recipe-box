@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.heading {
+  font-family: 'Share', cursive;
+  font-size: 15rem;
+  color: #EB984E;
+}
+
+.heading-full-stop {
+  color: #58D68D;
+}
+
+.main-content {
+  margin: 200px auto;
+}
