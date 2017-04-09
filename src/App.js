@@ -1,35 +1,18 @@
-import React from 'react';
-import { Container } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store, { history } from './store';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from './actions/actionCreators';
+import Main from './Main';
 
-import './styles/App.css';
-
-import RecipeList from './RecipeList';
-import UserMenu from './UserMenu';
-import AddRecipe from './AddRecipe';
-import Favourites from './Favourites';
-import Home from './Home';
-
-const App = () => {
-    return (
-        <Provider store={store}>
-            <Router history={history}>
-                <div className="App">
-                    <UserMenu />
-                    <div className="main-content">
-                        <Container>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/recipes" component={RecipeList} />
-                            <Route path="/favourites" component={Favourites} />
-                            <Route path="/addrecipe" component={AddRecipe} />
-                        </Container>
-                    </div>
-                </div>
-            </Router>
-        </Provider>
-    );
+function mapStateToProps (state) {
+    return {
+        recipes: state.recipes
+    }
 }
 
-export default App;
+function mapDispatchToProps (dispatch) {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+const ReduxConnector = connect(mapStateToProps, mapDispatchToProps)(Main);
+
+export default ReduxConnector;
