@@ -17,9 +17,9 @@ export function addRecipe(id, recipeName, ingredients) {
 }
 
 // edit recipe
-export function addRecipe(id, recipeName, ingredients) {
+export function editRecipe(id, recipeName, ingredients) {
     return {
-        type: 'ADD_RECIPE',
+        type: 'EDIT_RECIPE',
         id,
         recipeName,
         ingredients
