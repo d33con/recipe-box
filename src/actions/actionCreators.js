@@ -1,3 +1,5 @@
+import { v4 } from 'node-uuid';
+
 // favourite recipe
 export function toggleFavourite(id) {
     return {
@@ -7,10 +9,10 @@ export function toggleFavourite(id) {
 }
 
 // add recipe
-export function addRecipe(id, recipeName, ingredients) {
+export function addRecipe(recipeName, ingredients) {
     return {
         type: 'ADD_RECIPE',
-        id,
+        id: v4(),
         recipeName,
         ingredients
     }
