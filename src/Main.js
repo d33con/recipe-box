@@ -1,9 +1,17 @@
 import React from 'react';
 
-export default function Main ({children}) {
+import RecipeList from './RecipeList';
+import AddRecipe from './AddRecipe';
+import UserMenu from './UserMenu';
+
+const Main = () => {
     return (
       <div>
-          {children}
+          <UserMenu />
+          <RecipeList />
+          <AddRecipe />
       </div>
     )
 };
+
+export default Main;
