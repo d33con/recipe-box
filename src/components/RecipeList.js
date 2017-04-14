@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, List, Button, Icon } from 'semantic-ui-react';
 
-import recipes from './data/defaultRecipes';
+import recipes from '../data/defaultRecipes';
 
 class RecipeList extends Component {
     constructor() {
